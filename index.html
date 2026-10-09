@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sunday Press Fun — Crossword</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="sage">
+<div class="wrap">
+  <!-- Site header and project-file picker. -->
+  <header class="top">
+    <div class="brand">
+      <div class="logo">SP</div>
+      <div><div class="brand-name">Sunday Press Fun</div><div class="brand-sub">Crossword</div></div>
+    </div>
+    <div><button id="loadBtn" class="open">Open puzzle</button><input id="file" class="hidden" type="file" accept=".spfun,.json,application/json"></div>
+  </header>
+
+  <!-- Empty state shown before a puzzle is loaded. -->
+  <section id="empty" class="empty">
+    <h1>Ready when you are.</h1>
+    <p>Open a crossword project saved from the Sunday Press Fun constructor and start solving.</p>
+    <button id="emptyOpen" class="open">Open puzzle</button>
+  </section>
+
+  <!-- Puzzle interface, shown after a valid project is loaded. -->
+  <main id="game" class="layout hidden">
+    <section class="board-panel">
+      <div class="board-head"><div class="puzzle-label">Sunday crossword</div><div id="progress" class="progress">0 / 0</div></div>
+      <div class="board-wrap"><div id="board" class="board" aria-label="Crossword grid"></div></div>
+      <div class="board-foot"><span><span class="keyhint">← ↑ ↓ →</span> move</span><span><span class="keyhint">TAB</span> next clue</span><span><span class="keyhint">⌫</span> erase</span></div>
+    </section>
+
+    <div class="right-stack"><aside class="clues-panel">
+      <div id="current" class="current">
+        <div class="current-top"><span id="currentDir" class="current-dir">Across</span><span id="currentLen" class="current-len">0 letters</span></div>
+        <div id="currentClue" class="current-clue">Select a clue to begin.</div>
+      </div>
+      <div class="section"><div class="section-title"><span>Across</span><span id="acrossCount"></span></div><div id="across" class="clue-list"></div></div>
+      <div class="section"><div class="section-title"><span>Down</span><span id="downCount"></span></div><div id="down" class="clue-list"></div></div>
+      <div id="done" class="done">Puzzle complete. Nice work.</div>
+      <div id="keyboard" class="keyboard"></div>
+    </aside>
+    <div class="check-row"><button id="checkButton" class="check-button" type="button">CHECK</button></div></div>
+  </main>
+</div>
+<script src="app.js" defer></script>
+</body>
+</html>
